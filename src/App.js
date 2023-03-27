@@ -1,6 +1,6 @@
 
-import './App.css';
-import Navbar from './components/navbar';
+import '../src/components/navbar/navbar.css';
+import Navbar from '../src/components/navbar/navbar';
 
 
 
