@@ -1,16 +1,9 @@
-
-import '../src/components/navbar/navbar.css';
-import Navbar from '../src/components/navbar/navbar';
-
-
-
+import {Register} from './components/Register/register';
 
 function App() {
   return (
-    <div>
-     <Navbar/>
-    
-    </div>    
+       <Register 
+     />
   );
 }
 
