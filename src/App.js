@@ -2,8 +2,10 @@ import {Register} from './components/Register/register';
 
 function App() {
   return (
-       <Register 
-     />
+    <>
+    <Register
+    />
+    </>
   );
 }
 
