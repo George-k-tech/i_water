@@ -18,14 +18,14 @@ function Register() {
         <div>
             Register
             <form onSubmit={handleSubmit}>
-                <label >Name</label><br></br>
-                <input placeholder="input full name" value={name} onChange={e => setName(e.target.value)} /><br></br>
+                <label >Name:</label><br></br>
+                <input placeholder="input full name" value={name} onChange={e => setName(e.target.value)} required/><br></br>
                 <label >Email:</label><br></br>
-                <input placeholder="input email" value={email} onChange={e => setEmail(e.target.value)} /><br></br>
+                <input placeholder="input email" value={email} onChange={e => setEmail(e.target.value)} required/><br></br>
                 <label >Phone Number:</label><br></br>
-                <input placeholder="input your phone number" value={phone} onChange={e => setPhone(e.target.value)} /><br></br>
+                <input placeholder="input your phone number" value={phone} onChange={e => setPhone(e.target.value)} required/><br></br>
                 <label >password:</label><br></br>
-                <input placeholder="input password" value={password} onChange={e => setPassword(e.target.value)} /><br></br>
+                <input placeholder="input password" value={password} onChange={e => setPassword(e.target.value)} required/><br></br>
                 <button type="submit">Submit</button>
             </form>
         </div>
