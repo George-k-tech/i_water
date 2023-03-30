@@ -1,11 +1,8 @@
-import {Register} from './components/Register/register';
+import Home from './components/Home/home';
 
 function App() {
   return (
-    <>
-    <Register
-    />
-    </>
+    <Home />
   );
 }
 
