@@ -9,3 +9,9 @@ use the package manager npm to install the node modules
 ``` bash
 npm install
 ```
+To handle routing install the package 
+
+```bash
+npm install react-router-dom
+```
+
