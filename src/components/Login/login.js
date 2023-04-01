@@ -1,23 +1,27 @@
 import { useState } from "react";
-import { Form } from "react-router-dom";
+
 
 function Login() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [inputs, setInputs] = useState({});
+    
+function handleChange(event){
+    const name = event.target.name
+    const value = event.target.value
+    setInputs(values => ({...value, [name]: value }));
+
+}
 
     function handleSubmit(e){
         e.preventDefault();
-        console.log(email);
-        console.log(password);
-
+        console.log(inputs)
     }
 
     return (
         <form onSubmit={handleSubmit}>
             <label>Email</label>
-            <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Input your email" required />
+            <input name="email" onChange={handleChange} placeholder="Input your email" required />
             <label>Password</label>
-            <input value={password} onChange={e => setPassword(e.target.value)} placeholder="Input password" required />
+            <input name="password" onChange={handleChange} placeholder="Input password" required />
             <button type = "submit"> submit</button>
         </form>
     );
