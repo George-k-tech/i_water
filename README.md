@@ -14,4 +14,8 @@ To handle routing install the package
 ```bash
 npm install react-router-dom
 ```
+To handle the php API install the package
 
+```bash
+npm install axios
+```
