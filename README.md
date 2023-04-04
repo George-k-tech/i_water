@@ -19,3 +19,8 @@ To handle the php API install the package
 ```bash
 npm install axios
 ```
+To install react icons
+
+```bash
+npm install react-icons --save
+```
