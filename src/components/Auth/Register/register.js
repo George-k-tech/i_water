@@ -1,8 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 function Register() {
+    const navigate = useNavigate();
+
     const[inputs, setInputs] =useState({});
    
     function handleChange(event){
@@ -14,8 +17,12 @@ function Register() {
     function handleSubmit(e) {
         e.preventDefault();
 
-        axios.post('http://localhost:80/api/user/save', inputs);
-        console.log(inputs);
+        axios.post('http://localhost:80/api/user/save', inputs).then(function(response)
+        {
+            console.log(response.data);
+            navigate('List/Users');
+        }
+        );
     }
 
     return (
