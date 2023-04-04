@@ -24,3 +24,8 @@ To install react icons
 ```bash
 npm install react-icons --save
 ```
+To install styled components
+
+```bash
+npm install --save styled-components
+```
