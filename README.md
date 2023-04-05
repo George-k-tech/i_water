@@ -24,3 +24,7 @@ To install react icons
 ```bash
 npm install react-icons --save
 ```
+To use firebase database
+```bash
+npm install firebase
+```
