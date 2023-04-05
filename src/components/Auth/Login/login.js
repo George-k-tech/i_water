@@ -19,7 +19,7 @@ function handleChange(event){
     return (
         <form onSubmit={handleSubmit}>
             <label>Email</label>
-            <input name="email" onChange={handleChange} placeholder="Input your email" required />
+            <input name="email" onChange={handleChange}  placeholder="Input your email" required />
             <label>Password</label>
             <input name="password" onChange={handleChange} placeholder="Input password" required />
             <button type = "submit"> submit</button>
