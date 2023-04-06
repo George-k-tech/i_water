@@ -28,10 +28,9 @@ function Register() {
         if (validatePassword()) {
             try {
                 await createUser(email, password);
-                navigate('/account');
+                navigate('/home');
             } catch (e) {
                 setError(e.message);
-                console.log(e.message);
             }
         }
     }

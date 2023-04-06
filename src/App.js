@@ -14,15 +14,26 @@ import { ProtectedRoute } from "./components/Auth/protectedRoute/protectedroute"
 function App() {
   return (
     <>
-      <AuthContextProvider>
+      <>
+        <AuthContextProvider>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/account" element={<ProtectedRoute>
+              <Account />
+            </ProtectedRoute>} />
+          </Routes>
+        </AuthContextProvider>
+      </>
+      <>
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/account" element={<ProtectedRoute>
-            <Account />
-          </ProtectedRoute>} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contacts" element={<Contact />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/product" element={<Product />} />
         </Routes>
-      </AuthContextProvider>
+      </>
     </>
   );
 }

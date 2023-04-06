@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import{useRef} from 'react';
-import {FaBars, FaTimes ,FaUser}  from 'react-icons/fa';
+import {FaBars, FaTimes}  from 'react-icons/fa';
 import './navbar.css'
 
 
@@ -14,7 +14,7 @@ const Navbar=()=>{
         <header>
             <h1 className="logo">logo</h1>
             <nav ref={navRef}>
-              <NavLink to="/"> Home</NavLink>
+              <NavLink to="/home"> Home</NavLink>
               <NavLink to="/about">About</NavLink> 
               <NavLink to="/contacts">Contacts</NavLink> 
               <NavLink to="/cart">Cart</NavLink>
@@ -25,10 +25,7 @@ const Navbar=()=>{
             <button className='nav-btn' onClick={showNavbar}>
                 <FaBars/>
             </button>
-            <button >
-                    <FaUser/>
-                </button>
-           
+            
         </header>
 
     );  
