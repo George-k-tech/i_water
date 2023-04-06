@@ -17,7 +17,7 @@ header{
   display:flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height:10vh;
   padding-right: 0px;
   padding: 0 2rem;
   background-color: var(--mainColor);
@@ -85,4 +85,9 @@ header .nav-btn{
 .avatar{
  
   border-radius: 50%;
+}
+.user-icon{
+  background-color: var(--mainColor);
+  color: #eee;
+  border: none;
 }

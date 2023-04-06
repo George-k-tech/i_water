@@ -1,6 +1,7 @@
+import './contact.css'
 function Contact(){
     return (
-        <div>
+        <div className='contact-page'>
             <h1>contact us</h1>
         </div>
     );

@@ -1,6 +1,7 @@
+import './products.css'
 function Product(){
     return (
-        <div>
+        <div className="products-page">
             <h1>our products</h1>
         </div>
     );
