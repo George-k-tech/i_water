@@ -20,18 +20,18 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/account" element={<ProtectedRoute>
-              <Account />
+             <><Navbar/>  <Account /> <Footer/> </>
             </ProtectedRoute>} />
           </Routes>
         </AuthContextProvider>
       </>
       <>
         <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contacts" element={<Contact />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/product" element={<Product />} />
+          <Route path="/home" element={<><Navbar/> <Home/> <Footer/></>} />
+          <Route path="/about" element={<><Navbar/> <About/> <Footer/></>} />
+          <Route path="/contacts" element={<><Navbar/> <Contact/> <Footer/></>} />
+          <Route path="/cart" element={<><Navbar/> <Cart/> <Footer/></>} />
+          <Route path="/product" element={<><Navbar/> <Product/> <Footer/></>} />
         </Routes>
       </>
     </>
