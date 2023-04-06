@@ -23,7 +23,7 @@ function Account() {
                     </img>
 
                 </div>
-            <p className="user-email">user email: {user && user.email}</p>
+            <p className="user-email">user email:<span className="email">{user && user.email}</span> </p>
             <button  className="user-btn"onClick={handleLogout}>Logout</button>
         </div>
             
