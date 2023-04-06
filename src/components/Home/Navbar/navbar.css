@@ -29,9 +29,12 @@ nav a{
   text-decoration: none;
 }
 nav a:hover{
-  /* color:var(--secondaryColor) */
+  color: #00a8ff;
   font-weight: bold;
 }
+nav a.active {
+  color: #00a8ff;
+ }
 header .nav-btn{
   padding: 5px;
   cursor: pointer;
