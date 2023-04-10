@@ -6,7 +6,7 @@ function Home(){
   const navigate = useNavigate();
 
   return (
-      <div>
+      <div  className="container">
         <h1>
           home page
         </h1>

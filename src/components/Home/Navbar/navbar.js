@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useRef } from 'react';
-import { FaBars, FaTimes, FaUser } from 'react-icons/fa';
+import { FaBars, FaTimes, FaUserAlt } from 'react-icons/fa';
 import './navbar.css'
 
 
@@ -29,8 +29,8 @@ const Navbar = () => {
             <button className='nav-btn' onClick={showNavbar}>
                 <FaBars />
             </button>
-            <button on onClick={handlClick}>
-                <FaUser />
+            <button className="user-icon" on onClick={handlClick}>
+                <FaUserAlt />
             </button>
         </header>
 

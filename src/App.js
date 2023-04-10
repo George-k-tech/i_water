@@ -13,7 +13,7 @@ import { AuthContextProvider } from "./components/Context/AuthContext";
 import { ProtectedRoute } from "./components/Auth/protectedRoute/protectedroute";
 function App() {
   return (
-    <>
+    <div>
       <>
         <AuthContextProvider>
           <Routes>
@@ -34,7 +34,7 @@ function App() {
           <Route path="/product" element={<><Navbar/> <Product/> <Footer/></>} />
         </Routes>
       </>
-    </>
+    </div>
   );
 }
 
