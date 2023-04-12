@@ -23,3 +23,7 @@ To use firebase database
 ```bash
 npm install firebase
 ```
+to install firestore
+```bash
+npm install firebase@9.19.1 --save
+```
