@@ -19,6 +19,10 @@ To install react icons
 ```bash
 npm install react-icons --save
 ```
+To install google button
+```bash
+npm install react-google-button
+```
 To use firebase database
 ```bash
 npm install firebase
