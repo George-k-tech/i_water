@@ -36,28 +36,18 @@ function Register() {
         return isValid
     }
 
-    const createUserDocument = async(user) =>{      
-        if(!user) return;
-          try{
-         const userRef = await addDoc(collection(db, `users`),{
-            displayName: "welcome",
-            email : user.email
-         });
-        console.log(userRef);
-          }catch(e){
-         console.log('error in creating user', e)
-          }
-        }
-
-    const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
         if (validatePassword()) {
             try {
                 await createUser(email, password);
+                 await addDoc(collection(db, `users`),{
+                    displayName:{displayName},
+                    email : email
+                })
                 navigate('/home');
-                await createUserDocument(user);
-                //console.log(user);
+                console.log(user.email);
             } catch (e) {
                 setError(e.message);
             }
