@@ -6,7 +6,6 @@ import './profile.css'
 function Account() {
     const { user, logout } = UserAuth();
     const navigate = useNavigate();
-    
     const handleLogout = async () => {
         try {
             await logout();

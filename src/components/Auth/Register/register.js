@@ -2,16 +2,18 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleButton } from "react-google-button";
 import { UserAuth } from "../../Context/AuthContext";
+import { collection, addDoc } from "firebase/firestore";
+import {db} from "../../../Database/firebase"
 import './register.css'
 
 
 function Register() {
-
+    const [displayName, setDisplayName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
-    const { createUser, googleSignIn } = UserAuth();
+    const { createUser, googleSignIn, user } = UserAuth();
     const navigate = useNavigate();
 
     const handleGoogleSignIn = async () => {
@@ -34,13 +36,18 @@ function Register() {
         return isValid
     }
 
-    const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
         if (validatePassword()) {
             try {
                 await createUser(email, password);
+                 await addDoc(collection(db, `users`),{
+                    displayName:{displayName},
+                    email : email
+                })
                 navigate('/home');
+                console.log(user.email);
             } catch (e) {
                 setError(e.message);
             }
@@ -54,13 +61,14 @@ function Register() {
                 {error && <div className='auth__error'>{error}</div>}
                 <div className="register-form">
                     <form onSubmit={handleSubmit}>
+                        <label>Name</label>
+                        <input placeholder="name" type="name " value={displayName} onChange={e => setDisplayName(e.target.value)}></input><br></br>
                         <label>email</label>
                         <input placeholder="email" type="email " value={email} onChange={e => setEmail(e.target.value)}></input><br></br>
                         <label>password</label>
                         <input placeholder="password" type="password" value={password} onChange={e => setPassword(e.target.value)}></input><br></br>
                         <label>confirm password</label>
                         <input placeholder="confirmPassword" type="password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}></input><br></br>
-
                         <div className="form-bottom">
                             <button className="register-btn" type="submit" >register</button>
                             <p>Already have an account? <Link to="/">Login</Link> </p>
