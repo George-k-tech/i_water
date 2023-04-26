@@ -18,11 +18,12 @@ function Account() {
         <div className="profile">
             <div className="account">
                 <div className="profile-img">
-                    <img className="avatar" src="https://imgv3.fotor.com/images/blog-richtext-image/10-profile-picture-ideas-to-make-you-stand-out.jpg">
+                    <img className="avatar" src="https://imgv3.fotor.com/images/blog-richtext-image/10-profile-picture-ideas-to-make-you-stand-out.jpg" alt="">
                     </img>
 
                 </div>
             <p className="user-email">user email:<span className="email">{user && user.email}</span> </p>
+            <p className="name">user name:<span className="name">{user && user.displayname}</span> </p>
             <button  className="user-btn"onClick={handleLogout}>Logout</button>
         </div>
             

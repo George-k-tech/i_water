@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { GoogleButton } from "react-google-button";
 import { UserAuth } from "../../Context/AuthContext";
 import { collection, addDoc } from "firebase/firestore";
-import {db} from "../../../Database/firebase"
+import { db } from "../../../Database/firebase"
 import './register.css'
 
 
@@ -16,10 +16,10 @@ function Register() {
     const { createUser, googleSignIn, user } = UserAuth();
     const navigate = useNavigate();
 
-    const handleGoogleSignIn = async () => {
+    const handleGoogleSignIn = async (e) => {
         try {
             await googleSignIn();
-            navigate('/home');
+            navigate('/home')
         } catch (e) {
             setError(e.message);
         }
@@ -36,18 +36,19 @@ function Register() {
         return isValid
     }
 
- const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
         if (validatePassword()) {
             try {
-                await createUser(email, password);
-                 await addDoc(collection(db, `users`),{
-                    displayName:{displayName},
-                    email : email
+                await createUser(email, password).then(()=>{
+                     addDoc(collection(db, `users`), {
+                        displayName: { displayName },
+                        email: email
+                    })
                 })
+                console.log(user);
                 navigate('/home');
-                console.log(user.email);
             } catch (e) {
                 setError(e.message);
             }
