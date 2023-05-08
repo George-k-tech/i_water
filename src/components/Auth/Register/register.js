@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { GoogleButton } from "react-google-button";
 import { UserAuth } from "../../Context/AuthContext";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../../Database/firebase"
@@ -13,17 +12,9 @@ function Register() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
-    const { createUser, googleSignIn, user } = UserAuth();
+    const { createUser, user } = UserAuth();
     const navigate = useNavigate();
 
-    const handleGoogleSignIn = async (e) => {
-        try {
-            await googleSignIn();
-            navigate('/home')
-        } catch (e) {
-            setError(e.message);
-        }
-    }
 
     function validatePassword() {
         let isValid = true
@@ -41,8 +32,8 @@ function Register() {
         setError('');
         if (validatePassword()) {
             try {
-                await createUser(email, password).then(()=>{
-                     addDoc(collection(db, `users`), {
+                await createUser(email, password).then(() => {
+                    addDoc(collection(db, `users`), {
                         displayName: { displayName },
                         email: email
                     })
@@ -74,7 +65,6 @@ function Register() {
                             <button className="register-btn" type="submit" >register</button>
                             <p>Already have an account? <Link to="/">Login</Link> </p>
                         </div>
-                        <GoogleButton onClick={handleGoogleSignIn} />
                     </form>
 
                 </div>
