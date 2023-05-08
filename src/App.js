@@ -11,7 +11,7 @@ import { Register } from "./components/Auth/Register/register";
 import { Account } from "./components/Home/Profile/account";
 import { AuthContextProvider } from "./components/Context/AuthContext";
 import { ProtectedRoute } from "./components/Auth/protectedRoute/protectedroute";
-import { PasswordReset } from "./components/Auth/passwordReset/passwordreset";
+
 function App() {
   return (
     <div>
@@ -23,7 +23,7 @@ function App() {
             <Route path="/account" element={<ProtectedRoute>
              <><Navbar/>  <Account /> <Footer/> </>
             </ProtectedRoute>} />
-            <Route path="/resetpassword" element ={<PasswordReset/>}/>
+
           </Routes>
         </AuthContextProvider>
       </>

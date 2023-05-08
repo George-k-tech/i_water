@@ -7,7 +7,7 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const { loginUser } = UserAuth();
+    const { loginUser, forgotPassword } = UserAuth();
 
     const navigate = useNavigate();
 
@@ -22,6 +22,11 @@ function Login() {
         }
 
     }
+
+    const forgotPasswordHandler = (e) => {
+          forgotPassword(email)
+          setError(e.message)
+      };
 
     return (
         <div className="login-page">
@@ -41,7 +46,7 @@ function Login() {
                                 <div className="form-footer">
                                     <button className="submit-btn" type="submit"> submit</button>
                                     <p className="register-link">Don't have an account? <Link to="/register">Register</Link></p>
-                                    <p className="register-link">forgot password? <Link to="/passwordReset">reset password</Link></p>
+                                    <button onClick={forgotPasswordHandler}>Forgot Password?</button>
                                 </div>
                             </form>
                         </div>

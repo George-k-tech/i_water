@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../Context/AuthContext";
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../../Database/firebase"
 import './register.css'
 
 
@@ -32,12 +30,7 @@ function Register() {
         setError('');
         if (validatePassword()) {
             try {
-                await createUser(email, password).then(() => {
-                    addDoc(collection(db, `users`), {
-                        displayName: { displayName },
-                        email: email
-                    })
-                })
+                await createUser(email, password)
                 console.log(user);
                 navigate('/home');
             } catch (e) {
